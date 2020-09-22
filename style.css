@@ -1,0 +1,132 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "navbar content";
+}
+
+main {
+  min-width: 66vw;
+}
+
+main section:nth-child(1) header {
+  margin-top: 0;
+}
+
+
+main header {
+  background-color: gray;
+  margin: .5rem 0;
+  padding: .5rem;
+  font-size: 20px;
+  letter-spacing: .1rem;
+}
+
+code {
+  display: inline-block;
+  font-size: 14px;
+  background-color: lightgray;
+  padding: .5rem 0;
+}
+
+section > p, section > code, section > ol {
+  margin: .5rem 5%;
+}
+
+img {
+  display: block;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin: auto;
+}
+
+iframe {
+  position: absolute;
+  height:100%;
+  width:100%;
+}
+
+ol li {
+  list-style-type: decimal;
+  padding: .25rem 1rem;
+}
+
+
+#navbar {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  grid-area: navbar;
+  display: flex;
+  flex-direction: column;
+  border-right: 5px solid silver;
+}
+
+#navbar header {
+  background-color: #ed6b21;
+  align-self: center;
+  text-align: center;
+  font-size: 25px;
+  padding: 1rem;
+  border-bottom: 2px solid silver;
+}
+
+#nav-link-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-link {
+  padding: 1rem 1rem 1rem 2rem;
+  border-bottom: 2px solid silver;
+  text-decoration: none;
+  color: #333;
+}
+
+.aspect-ratio {
+  position: relative;
+  height:0;
+  width:90%;
+  padding-bottom: 51%;
+  margin: auto;
+}
+
+@media (max-width: 900px), (max-aspect-ratio: 1/1) {
+  body {
+    grid: [row1-start] "navbar" auto [row1-end]
+          [row2-start] "content" auto [row2-end];
+  }
+
+  main {
+    min-height: 66vh;
+  }
+
+  #navbar {
+    border-right: none;
+    border-bottom: 5px solid gray;
+    height: auto;
+    position: sticky;
+    top: -84px;
+    z-index: 1;
+  }
+  #navbar header {
+    width:100%
+  }
+  #nav-link-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 200px;
+  }
+}

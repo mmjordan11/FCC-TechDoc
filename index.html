@@ -1,0 +1,133 @@
+<!Doctype html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>Prusa i3 MK3S<br>3D Printer Instructions</header>
+    <div id="nav-link-container">
+      <a class="nav-link" href="#Prusa_New_User_Video">Prusa New User Video</a>
+      <a class="nav-link" href="#PrusaSlicer_Tutorial_Video">PrusaSlicer Tutorial Video</a>
+      <a class="nav-link" href="#Create_a_Model">Create a Model</a>
+      <a class="nav-link" href="#Generate_G-code">Generate G-code</a>
+      <a class="nav-link" href="#Prepare_Printer">Prepare Printer</a>
+      <a class="nav-link" href="#Print_Your_Part">Print Your Part</a>
+      <a class="nav-link" href="#Removing_Your_Print">Removing Your Print</a>
+    </div>
+  </nav>
+  <main id="main-doc">
+    <section id="Prusa_New_User_Video" class="main-Section">
+      <header>Prusa New User Video</header>
+      <div class="aspect-ratio">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GE-lrRbU124" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section id="PrusaSlicer_Tutorial_Video" class="main-Section">
+      <header>PrusaSlicer Tutorial Video</header>
+      <div class="aspect-ratio">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ttg2wEjD784" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section id="Create_a_Model" class="main-section">
+      <header>Create a Model</header>
+      <p>To make a part, you must first develop a 3D model. Computer Aided Design
+        (CAD) programs provide the tools to do this. If you have access to
+        SolidWorks, that will likely be the best software. Otherwise,
+        <a href="https://www.tinkercad.com/">TinkerCad.com</a> is a great free
+        and internet browser-based CAD program.<p>
+        <code>NOTE: Instructions on using CAD software to develop the model are
+          beyond the scope of these instructions. Please refer to software
+          documentation for tutorials and instructions.</code>
+      <p>When your model is complete, save it in .STL format. Then you are ready
+        to load your file into the slicer software!
+    </section>
+    <section id="Generate_G-code" class="main-section">
+      <header>Generate G-code</header>
+      <p>Next you will need to convert your 3D model into a language that the
+        printer understands. G-code is a file format understood by 3D printers.
+        It is a set of instructions that tell the 3D printer what parameters to
+        follow in creating the model. These parameters include nozzle movement,
+        nozzle and heatbed temperatures, filament feed speed, fan speed, etc.
+        When these instructions are executed in order, you end up with a print.</p>
+      <img src="PrusaSlicer-interface.png" alt="PrusaSlicer GUI Screenshot">
+      <ol>
+        <li>The <strong>Add</strong> button loads models into PrusaSlicer</li>
+        <li><strong>Delete</strong> and <strong>Delete All</strong> buttons
+          remove the model(s) from PrusaSlicer</li>
+        <li>Opens the detailed settings of print, filament, and printer</li>
+        <li>Move, scale, rotate, Place on Face and cut tools</li>
+        <li>Slice and generate <strong>.gcode</strong> button</li>
+        <li>Quality / Speed setting of print</li>
+        <li>Material selection</li>
+        <li>Print selection</li>
+        <li>Right-click on model opens a context menu</li>
+        <li>Switch between 3D editor and layers preview</li>
+        <li>Model preview</li>
+        <li>Switch between Simple / Advanced / Expert mode</li>
+      </ol>
+      <p>You might need to adjust some of the print settings to optimize for
+        your material of choice. Recommended print settings can be found in
+        <a href="https://help.prusa3d.com/en/category/material-guide_220">
+          Prusa's Material Guide</a>. You must save your completed g-code to an
+          SD card or USB flash drive. Once this is complete, you are ready to
+          move to the printer.</p>
+    </section>
+    <section id="Prepare_Printer" class="main-section">
+      <header>Prepare Printer</header>
+      <p>Insert your SD card to the printer. Select <code>Print from SD card
+        </code>, then load your choice of filament
+        spool onto the spool holder. Make sure the material
+        you load is the same as the material you specified in your g-code. Allow
+        the printer nozzle to pre-heat.</p>
+      <code><strong>WARNING!</strong>: From this point on <strong>DO NOT TOUCH
+        THE NOZZLE</strong>. It is hot up to 200 &#176;C.</code>
+      <p>Make sure you cut the filament tip to a
+        point with a pair of wire cutters. When directed by the LCD display,
+        insert the filament into the extruder. Filament will begin coming out
+        of the nozzle. When the filament loading is complete, remove waste
+        material from the nozzle and print area.</p>
+      <img src="LoadingFilament.png" alt="Loading filament intot the extruder">
+      <p>Before pre-heating of the heatbed, you will need to prepare the
+        print surface. Some materials like PLA will only require a clean surface
+        on the Smooth PEI sheet. You should clean the print surface with 90+%
+        isopropyl alcohol and a wipe. Other materials may require a film of
+        Windex or glue stick to be applied. More detailed information of print
+        surface prep can be found in
+        <a href="https://help.prusa3d.com/en/article/first-layer-issues_1804">
+          Prusa's First Layer Issues guide</a>.</p>
+    </section>
+    <section id="Print_Your_Part" class="main-section">
+      <header>Print Your Part</header>
+      <p>Select pre-heat from the menu and start the print. The LCD display will
+        show the pre-heat data and the printer will begin the mesh bed leveling.
+        After leveling is complete, the nozzle purge will lay a strip of
+        filament in the front left corner of the print table. Afterwards you
+        should select "Live adjust Z" and see
+        <code>Adjusting Z:
+              X.XXX mm</code>
+        on the display as the first layer starts. You should adjust the z-height
+        of the nozzle with the selector wheel until the filament bead forms a
+        flattened oval cross-section shape. This should be close to -1 mm.</p>
+      <img src="zHeightGuide.png" alt="Adjust z-height until filament bead is slightly squished">
+      <p>Now your print is commencing and you just have to wait. Come back in
+        a few hours to a day for average prints to collect your part.</p>
+        <code><strong>WARNING!</strong>: Watch the first few printed layers to
+          be sure the filament has attached to the bed properly (5 to 10
+          minutes).</code>
+    </section>
+    <section id="Removing_Your_Print" class="main-section">
+      <header>Removing Your Print</header>
+      <p>First let the nozzle, heatbed, and part cool. To remove your print,
+        remove the entire build plate from the heatbed. A gentle bend of the
+        build plate in both directions should free the part. If the part is not
+        easily releasing, you may push a plastic spatula under the corner of
+        your part to help gently pry it free. Remove the part and clean the bed
+        again with isopropyl alcohol.</p>
+
+      <p>Congratulations! You printed a part! Happy printing!</p>
+    </section>
+</body>
+</html>
